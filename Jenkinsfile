@@ -6,7 +6,7 @@ pipeline{
         stages{
             stage('Docker Login'){
                 steps{
-                    sh "sudo apt update"
+                    sh "sudo apt-get update"
                     sh "sudo apt install curl -y"
                     sh "curl https://get.docker.com | sudo bash"
                     sh "sudo usermod -aG docker jenkins"
