@@ -12,7 +12,7 @@ pipeline{
                     sh "curl https://get.docker.com | sudo bash"
                     sh "sudo usermod -aG docker jenkins"
                     sh "newgrp docker"
-                    sh "docker login -u ${'DOCKER_CREDENTIALS_USR'} -p ${'DOCKER_CREDENTIALS_PSW'}"        
+                    sh "sudo docker login -u ${'DOCKER_CREDENTIALS_USR'} -p ${'DOCKER_CREDENTIALS_PSW'}"        
                 }
             }
         }
