@@ -11,8 +11,8 @@ pipeline{
                     sh "sudo rm /usr/share/keyrings/docker-archive-keyring.gpg"
                     sh "curl https://get.docker.com | sudo bash"
                     sh "sudo usermod -aG docker jenkins"
-                    sh "newgrp docker"
-                    sh "sudo docker login -u ${'DOCKER_CREDENTIALS_USR'} -p ${'DOCKER_CREDENTIALS_PSW'}"        
+                    sh "sudo systemctl restart jenkins"
+                    sh "docker login -u ${DOCKER_CREDENTIALS_USR} -p ${DOCKER_CREDENTIALS_PSW}"        
                 }
             }
         }
